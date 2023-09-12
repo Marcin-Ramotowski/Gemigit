@@ -1,0 +1,8 @@
+.dockerignore
+.gitignore
+*.csr
+*.pem
+docker-compose.yml
+Dockerfile
+LICENSE
+README.*
