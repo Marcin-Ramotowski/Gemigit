@@ -3,6 +3,7 @@ services:
   gemigit:
     build: .
     container_name: gemigit
+    restart: unless-stopped
     ports:
       - "1965:1965"
       - "5555:5555"
