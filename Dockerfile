@@ -29,7 +29,7 @@ COPY --from=builder /app/gemigit ./gemigit
 COPY . .
 
 # Install git
-RUN apk add git
+RUN apk add --no-cache git
 
 # Set application to listen on indicated ports
 EXPOSE 1965
