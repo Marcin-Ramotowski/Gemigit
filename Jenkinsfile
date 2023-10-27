@@ -5,15 +5,15 @@ pipeline {
       steps {
         sh '''
           docker-compose up -d
-          docker tag gemigit registry.byst.re/gemigit
+          docker tag gemigit <jenkins_url>/gemigit
           '''
       }
     }
     stage('Deploy') {
       steps {
         script {
-            appImage = docker.image('registry.byst.re/gemigit')
-            docker.withRegistry('https://registry.byst.re', '3c074810-ffdd-48a5-87c3-6f44051fca6d') {
+            appImage = docker.image('<jenkins_url>/gemigit')
+            docker.withRegistry('<jenkins_url>', '<credentials-id>') {
               appImage.push('latest')
           }
         }
